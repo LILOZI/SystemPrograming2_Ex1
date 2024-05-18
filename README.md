@@ -1,6 +1,6 @@
 # Graph Library - System Programing 2 Ex1
 ## Author
-+**Oz Atar**
+**+Oz Atar**
 +**Email: ozfatar@gmail.com**
 In this exercise I created a c++ library that has a Graph class and usefull
 algorithms that you can use on it.
