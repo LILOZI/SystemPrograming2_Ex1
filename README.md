@@ -1,7 +1,7 @@
 # Graph Library - System Programing 2 Ex1
 ## Author
-**+Oz Atar**
-+**Email: ozfatar@gmail.com**
++ **Oz Atar**
++ **Email: ozfatar@gmail.com**
 In this exercise I created a c++ library that has a Graph class and usefull
 algorithms that you can use on it.
 
@@ -35,7 +35,7 @@ At this stage information about the graph is also gathered.
 +**getNumVertices** - Return the amout of vertices in the graph.
 +**getWeight** - Given to positive integers the function will return the weight of the edge between them.
 
-To see more of the Graph functions and understand further the implementation be sure to check the Graph.cpp and Graph.hpp which are thoroughly documented.
+To see more of the Graph functions and understand further the implementation be sure to check the [Graph.hpp](https://github.com/LILOZI/SystemPrograming2_Ex1/blob/main/Graph.hpp) and [Graph.cpp](https://github.com/LILOZI/SystemPrograming2_Ex1/blob/main/Graph.cpp) which are thoroughly documented.
 
 ## Algoriths
 Set of function that you can use on any graph implemention that supports a certain interface.
@@ -53,7 +53,7 @@ the graph itself it return the shortest path between them if exsists.
 
 +**negativeCycle** - Given a graph return whether there is a negative weight cycle in the graph and returns it.
 
-To see more on the Algorithms and understand further the implementation be sure to check the Algorithms.cpp and Algorithms.hpp files which are thoroughly documented.
+To see more on the Algorithms and understand further the implementation be sure to check the [Algorithms.hpp](https://github.com/LILOZI/SystemPrograming2_Ex1/blob/main/Algorithms.hpp) and [Algorithms.cpp](https://github.com/LILOZI/SystemPrograming2_Ex1/blob/main/Algorithms.cpp) files which are thoroughly documented.
 
 When implementing the algorithms I used other algorithms to help me, I did not include them here to apply the principle of minimal API, however you can check their description at the HelpAlgo.hpp file or their implementation at the Algorithms.cpp file.
 
