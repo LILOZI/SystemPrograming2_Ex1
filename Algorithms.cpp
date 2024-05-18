@@ -1,3 +1,8 @@
+/**
+ * @author Oz Atar
+ * mail: ozfatar@gmail.com
+**/
+
 #include "Algorithms.hpp"
 #include "HelpAlgo.hpp"
 /*
@@ -306,7 +311,7 @@ std::string GraphLib::Algorithms::negativeCycle(const Graph &g){
     
 }
 
-std::string GraphLib::getPath(std::vector<int> &pre, size_t src, size_t dst, int len){
+std::string GraphLib::Algorithms::getPath(std::vector<int> &pre, size_t src, size_t dst, int len){
     if(len < 2){
         return std::to_string(src);
     }
@@ -316,7 +321,7 @@ std::string GraphLib::getPath(std::vector<int> &pre, size_t src, size_t dst, int
     return getPath(pre, src, (size_t)pre[dst], len-1) + "->" + std::to_string(dst);
 }
 
-void GraphLib::BFS(const Graph &g, size_t src,std::vector<int> &dis, std::vector<int> &pre, std::vector<int> &col){
+void GraphLib::Algorithms::BFS(const Graph &g, size_t src,std::vector<int> &dis, std::vector<int> &pre, std::vector<int> &col){
     if(!g.isLoaded()){
         throw std::invalid_argument("The graph is not loaded.");
     }
@@ -342,7 +347,7 @@ void GraphLib::BFS(const Graph &g, size_t src,std::vector<int> &dis, std::vector
     }
 }
 
-void GraphLib::DFS(const Graph &g, std::vector<int> &col, std::vector<int> &pre, std::vector<int> &dis, std::vector<int> &fin) { 
+void GraphLib::Algorithms::DFS(const Graph &g, std::vector<int> &col, std::vector<int> &pre, std::vector<int> &dis, std::vector<int> &fin) { 
     if(!g.isLoaded()){
         throw std::invalid_argument("The graph is not loaded.");
     }
@@ -354,7 +359,7 @@ void GraphLib::DFS(const Graph &g, std::vector<int> &col, std::vector<int> &pre,
     }
 }
 
-void GraphLib::DFS_VISIT(const Graph &g, size_t v, std::vector<int> &col, std::vector<int> &pre, int &time,std::vector<int> &dis, std::vector<int> &fin) {
+void GraphLib::Algorithms::DFS_VISIT(const Graph &g, size_t v, std::vector<int> &col, std::vector<int> &pre, int &time,std::vector<int> &dis, std::vector<int> &fin) {
     col[v] = 1; // Mark vertex as visited (color it gray)
     time++;
     dis[v] = time;
@@ -373,7 +378,7 @@ void GraphLib::DFS_VISIT(const Graph &g, size_t v, std::vector<int> &col, std::v
     fin[v] = time;
 }
 
-void GraphLib::DFSDetectCycle(const Graph &g, size_t v, std::vector<int> &col, std::vector<int> &pre, std::vector<int> &cycle) {
+void GraphLib::Algorithms::DFSDetectCycle(const Graph &g, size_t v, std::vector<int> &col, std::vector<int> &pre, std::vector<int> &cycle) {
     col[v] = GRAY; // Mark vertex as visited (color it gray)
     // Perform any necessary operations on the vertex v
     
@@ -401,14 +406,14 @@ void GraphLib::DFSDetectCycle(const Graph &g, size_t v, std::vector<int> &col, s
     col[v] = BLACK; // Mark vertex as finished (color it black)
 }
 
-void GraphLib::relax(size_t u, size_t v, int weight, std::vector<int> &dis, std::vector<int> &pre) {
+void GraphLib::Algorithms::relax(size_t u, size_t v, int weight, std::vector<int> &dis, std::vector<int> &pre) {
     if (dis[u] + weight < dis[v]) {
         dis[v] = dis[u] + weight;
         pre[v] = u;
     }
 }
 
-void GraphLib::Dijkstra(const Graph &g, size_t src, std::vector<int>& dis, std::vector<int>& pre) {
+void GraphLib::Algorithms::Dijkstra(const Graph &g, size_t src, std::vector<int>& dis, std::vector<int>& pre) {
     size_t len = g.getNumVertices();
     std::vector<bool> visited(len, false);
     
@@ -446,7 +451,7 @@ void GraphLib::Dijkstra(const Graph &g, size_t src, std::vector<int>& dis, std::
  property of the Upper bound of the shortest path to detect negative-weight cycles
  and find the shortest path between two vertices.
 */
-bool GraphLib::bellmanFord(const Graph &g, std::vector<int> &dis, std::vector<int> &pre, std::vector<int> &cycle) {
+bool GraphLib::Algorithms::bellmanFord(const Graph &g, std::vector<int> &dis, std::vector<int> &pre, std::vector<int> &cycle) {
     size_t len = g.getNumVertices();
     // vectors dis(distance) and pre(predecessor) were initialized before the function call
     // relax all the edges len-1 times, for the length of the largest shortest path
@@ -494,7 +499,7 @@ bool GraphLib::bellmanFord(const Graph &g, std::vector<int> &dis, std::vector<in
     return false; // No negative-weight cycle detected
 }
 
-std::vector<int> GraphLib::parsePath(std::string path) {
+std::vector<int> GraphLib::Algorithms::parsePath(std::string path) {
     std::vector<int> result;
     std::string delimiter = "->";
     size_t pos = 0;

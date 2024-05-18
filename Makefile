@@ -29,3 +29,5 @@ valgrind: demo test
 
 clean:
 	rm -f *.o demo test
+
+.PHONY: run demo test tidy valgrind clean

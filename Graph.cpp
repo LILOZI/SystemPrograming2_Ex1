@@ -1,3 +1,8 @@
+/**
+ * @author Oz Atar
+ * mail: ozfatar@gmail.com
+**/
+
 #include "Graph.hpp"
 
 // This is the class constructor, set all boolean flags to false

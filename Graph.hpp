@@ -1,3 +1,8 @@
+/**
+ * @author Oz Atar
+ * mail: ozfatar@gmail.com
+**/
+
 #include <vector>
 #include <iostream>
 #include <stdexcept>

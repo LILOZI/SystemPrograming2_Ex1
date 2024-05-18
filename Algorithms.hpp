@@ -1,3 +1,7 @@
+/**
+ * @author Oz Atar
+ * mail: ozfatar@gmail.com
+**/
 
 #include <string>
 #include "Graph.hpp"

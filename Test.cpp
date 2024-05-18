@@ -1,3 +1,8 @@
+/**
+ * @author Oz Atar
+ * mail: ozfatar@gmail.com
+**/
+
 #include "doctest.h"
 #include "Graph.hpp"
 #include "Algorithms.hpp"
